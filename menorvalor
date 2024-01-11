@@ -1,0 +1,31 @@
+'Sub ExemploFormatacaoCondicional()
+'
+''Definir Intervalo
+'Dim MeuIntervalo As Range
+'Set MeuIntervalo = Range("A1:A10")
+'
+'
+''Apagar Formatação Condicional Existente no Intervalo
+'MeuIntervalo.FormatConditions.Delete
+'
+'
+''Aplicar Formatação Condicional
+'MeuIntervalo.FormatConditions.Add Type:=xlCellValue, Operator:=xlBetween, _
+'        Formula1:="=100", Formula2:="=150"
+'MeuIntervalo.FormatConditions(1).Interior.Color = RGB(255, 0, 0)
+'End Sub
+
+Sub menorvalor()
+
+Dim v1 As Currency
+Dim v2 As Currency
+Dim v3 As Currency
+
+v1 = Range("a1").Value
+v2 = Range("a2").Value
+v3 = Range("a3").Value
+
+TN = Application.WorksheetFunction.Min(Sheets("Planilha1").Range("A1:A10"))
+MsgBox (TN)
+
+End Sub
